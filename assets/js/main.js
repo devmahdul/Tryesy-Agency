@@ -127,14 +127,8 @@
 		spaceBetween: 15,
 		speed: 1000,
 		breakpoints: {
-			'1600': {
-				slidesPerView: 4,
-			},
-			'1400': {
-				slidesPerView: 3,
-			},
 			'1200': {
-				slidesPerView: 3,
+				slidesPerView: 4,
 			},
 			'992': {
 				slidesPerView: 2,
