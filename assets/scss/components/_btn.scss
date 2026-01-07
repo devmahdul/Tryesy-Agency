@@ -1,0 +1,112 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.3 Button
+/*----------------------------------------*/
+
+.mh-btn {
+    background-color: var(--mh-secondary-color);
+    display: inline-block;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 25px;
+    color: var(--mh-heading-color);
+    letter-spacing: -0.02em;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    &:before {
+        position: absolute;
+        content: "";
+        background-color: var(--mh-white-color);
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include mh-transition(.3s);
+        z-index: -1;
+    }
+    &:hover {
+        &:before {
+            bottom: 0;
+        }
+    }
+    &-white {
+        background-color: var(--mh-white-color);
+        color: var(--mh-heading-color);
+        line-height: 1;
+        display: inline-block;
+        padding: 20px 48px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        &:before {
+            position: absolute;
+            content: "";
+            background-color: var(--mh-secondary-color);
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include mh-transition(.3s);
+            z-index: -1;
+        }
+        &:hover {
+            &:before {
+                bottom: 0;
+            }
+        }
+    }
+    &-transparent {
+        border: 2px solid rgba(20, 24, 32, 0.1);
+        display: inline-block;
+        background-color: rgba(39, 125, 255, 0);
+        padding: 9px 20px;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+        color: var(--mh-heading-color);
+        position: relative;
+        overflow: hidden;
+        & svg {
+            margin-left: 6px;
+            transform: rotate(0);
+            @include mh-transition(.3s);
+        }
+        &:before {
+            position: absolute;
+            content: "";
+            background-color: var(--mh-secondary-color);
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include mh-transition(.3s);
+            z-index: -1;
+        }
+        &:hover {
+            &:before {
+                bottom: 0;
+            }
+            & svg {
+                transform: rotate(45deg);
+            }
+        }
+    }
+    &-text {
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--mh-heading-color);
+        display: inline-block;
+        @include mh-transition(.3s);
+        & svg {
+            margin-left: 10px;
+        }
+        &:hover {
+            color: var(--mh-blue-color);
+        }
+    }
+}

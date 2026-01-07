@@ -1,0 +1,50 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.7 Section Title
+/*----------------------------------------*/
+
+.mh-section {
+    &-sub-title {
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--mh-heading-color);
+        display: block;
+        &:before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background-color: var(--mh-heading-color);
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 10px;
+            transform: translateY(-3px);
+        }
+        & .cta-white {
+            &:before {
+                background-color: var(--mh-white-color);
+            }
+        }
+    }
+    &-title {
+        font-size: 60px;
+        @media #{$xs} {
+            font-size: 35px;
+        }
+        @media #{$sm} {
+            font-size: 45px;
+        }
+        & br {
+            @media #{$xs} {
+                display: none;
+            }
+        }
+    }
+    &-info {
+        & p {
+            padding-right: 50px;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.9 Service
+/*----------------------------------------*/
+
+.mh-service {
+    &-shape {
+        left: 9%;
+        top: -2px;
+        opacity: .04;
+        @media #{$md} {
+            top: -18%;
+        }  
+    }
+    &-title {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+}

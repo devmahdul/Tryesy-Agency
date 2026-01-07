@@ -1,0 +1,33 @@
+// Transition
+@mixin mh-transition($time: .5s) {
+    -webkit-transition: $time;
+    -o-transition: $time;
+    transition: $time;
+}
+
+//TransformX
+@mixin transformX($x: 0) {
+  -webkit-transform: translateX($x);
+     -moz-transform: translateX($x);
+      -ms-transform: translateX($x);
+       -o-transform: translateX($x);
+          transform: translateX($x);
+}
+
+
+// Placeholder input
+
+@mixin mh-placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &::-ms-input-placeholder {
+        @content;
+    }
+}

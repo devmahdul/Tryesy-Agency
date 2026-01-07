@@ -1,0 +1,57 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  
+/*----------------------------------------*/
+
+.mh-offcanvas-menu {
+    & ul {
+        list-style: none;
+        & li {
+            position: relative;
+            &:not(:last-child) {
+                border-bottom: 1px solid 1px solid rgba(1, 15, 28, 0.1);
+            }
+            & a {
+                font-size: 15px;
+                font-weight: 500;
+                display: block;
+                padding: 6px 0;
+                border-bottom: 1px solid #ddd;
+            }
+            &.active {
+                & > a {
+                    color: var(--mh-blue-color);
+                }
+                & > button.mh-sidemenu-close {
+                    background-color: var(--mh-blue-color);
+                    border-color: var(--mh-blue-color);
+                    color: var(--mh-white-color);
+                    & i {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            & .sub-menu {
+                margin-left: 20px;
+                display: none;
+            }
+        }
+    }
+}
+.mh-sidemenu-close {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    &:hover {
+        background-color: var(--mh-blue-color);
+        color: var(--mh-white-color);
+    }
+    & i {
+        @include mh-transition();
+    }
+}

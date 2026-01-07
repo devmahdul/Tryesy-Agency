@@ -1,0 +1,53 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.3 Brand
+/*----------------------------------------*/
+
+.mh-brand {
+    &-bg {
+        padding: 21px 0;
+        white-space: nowrap;
+    }
+    &-title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1;
+        color: var(--mh-heading-color);
+        font-family: var(--mh-textslid-font);
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        &::after {
+            content: "";
+            height: 6px;
+            width: 6px;
+            background-color: var(--mh-heading-color);
+            display: inline-block;
+            border-radius: 50%;
+            transform: translateY(-4px);
+            margin-left: 30px;
+        }
+    }
+    &-2 {
+        & h4 {
+            font-size: 140px;
+            color: #277DFF;
+            text-transform: uppercase;
+            @media #{$lg} {
+                font-size: 110px;
+            }
+        }
+    }
+}
+.mh-slide-transtion,
+.mh-slide-transtion-2 {
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+.mh-brand-slide,
+.mh-brand-2-active {
+    & .swiper-slide {
+        width: auto;
+        display: inline-block
+    }
+}

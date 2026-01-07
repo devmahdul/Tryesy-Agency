@@ -1,0 +1,51 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.7 Goal
+/*----------------------------------------*/
+
+.mh-goal {
+    &-shape {
+        top: 35%;
+        right: -13px;
+        @media #{$xs} {
+            right: 15px;
+        }
+        & img {
+            animation: rotate 15s linear infinite;
+        }
+    }
+    &-content {
+        padding-left: 50px;
+        @media #{$xs,$md} {
+            padding-left: 0;
+        }
+    }
+    &-list {
+        margin-bottom: 15px;
+        & span {
+            width: 60px;
+            height: 60px;
+            background-color: #A5D3FA;
+            border-radius: 50%;
+            display: inline-block;
+            line-height: 60px;
+            text-align: center;
+            margin-right: 24px;
+        }
+        & h3 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0;
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

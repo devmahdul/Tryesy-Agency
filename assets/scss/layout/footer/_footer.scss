@@ -1,0 +1,112 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.2 Footer
+/*----------------------------------------*/
+
+.mh-footer {
+    &-text {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--mh-heading-color);
+        padding-right: 50px;
+    }
+    &-title {
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+    &-widget {
+        ul {
+            list-style: none;
+            li {
+                margin-bottom: 5px;
+                a {
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: var(--mh-text-color);
+                    position: relative;
+                    padding-left: 12px;
+                    @include mh-transition(.3s);
+                    &:before {
+                        content: '\f105';
+                        position: absolute;
+                        font-family: "Font Awesome 5 Pro";
+                        font-weight: 500;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        @include mh-transition(.3s);
+                    }
+                    &:hover {
+                        &:before {
+                            color: var(--mh-blue-color);
+                        }
+                        color: var(--mh-blue-color);
+                    }
+                }
+            }
+        }
+    }
+    &-bottom {
+        padding: 30px 30px 34px;
+    }
+    &-social {
+        width: 50%;
+        @media #{$xs} {
+            margin-bottom: 5px;
+            width: 100%;
+        }
+        & span {
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--mh-text-color);
+            margin-right: 10px;
+        }
+        & a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--mh-white-color);
+            border-radius: 50%;
+            margin-right: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            @include mh-transition();
+            & svg {
+                color: var(--mh-text-color);
+                @include mh-transition();
+            }
+            &:hover {
+                background-color: var(--mh-blue-color);
+                & svg {
+                    color: var(--mh-white-color);
+                }
+            }
+        }
+    }
+    &-copyright {
+        width: 50%;
+        @media #{$xs} {
+            width: 100%;
+        }
+        & span {
+            font-weight: 500;
+            font-size: 14px;
+            color: #525356;
+            & a {
+                color: var(--mh-blue-color);
+            }
+        }
+    }
+    &-col {
+        &-3 {
+            margin-left: 45px;
+            @media #{$md,$xs} {
+                margin-left: 0;
+            }
+        }
+    }
+}

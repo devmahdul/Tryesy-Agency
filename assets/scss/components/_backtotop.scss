@@ -1,0 +1,29 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.2 Back to Top
+/*----------------------------------------*/
+
+.mh-back-to-top{
+	width: 44px;
+    height: 44px;
+    background-color: var(--mh-secondary-color);
+    color: var(--mh-heading-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 8px 16px rgba(3, 4, 28, 0.3);
+    position: fixed;
+    bottom: 25px;
+    right: 50px;
+    z-index: 9999;
+    @include mh-transition(.3s);
+	@media #{$xs} {
+		right: 30px;
+		bottom: 10px;
+	}
+	&-open {
+		bottom: 50px;
+	}
+}

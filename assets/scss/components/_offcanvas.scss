@@ -1,0 +1,121 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.4 Offcanvas
+/*----------------------------------------*/
+
+.mh-offcanvas {
+    &-area {
+        position: fixed;
+        z-index: 999;
+        background-color: var(--mh-white-color);
+        right: 0;
+        top: 0;
+        width: 400px;
+        height: 100%;
+        padding: 50px 40px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+        @include mh-transition();
+        overflow-y: scroll;
+        overscroll-behavior-y: contain;
+    }
+    &-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-close {
+        &-button {
+            color: var(--mh-heading-color);
+            font-size: 29px;
+            @include mh-transition();
+            &:hover {
+                transform: rotate(90deg);
+            }
+        }
+    }
+    &-title {
+        font-size: 40px;
+        margin-bottom: 8px;
+    }
+    &-info {
+        & span {
+            color: var(--mh-dgray-color);
+            display: block;
+            margin-bottom: 5px;
+            @include mh-transition();
+            & a {
+                position: relative;
+                display: inline-block;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 1px;
+                    display: inl;
+                    background-color: var(--mh-heading-color);
+                    @include mh-transition();
+                }
+            }
+            &:hover {
+                color: var(--mh-primary-color);
+                & a {
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &-sm-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    &-social {
+        & a {
+            font-size: 14px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(2, 11, 24, 0.1);
+            color: var(--mh-heading-color);
+            margin-right: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+            & svg {
+                width: 18px;
+                height: 18px;
+            }
+            &:hover {
+                color: var(--mh-white-color);
+                background-color: var(--mh-heading-color);
+                border-color: transparent;
+            }
+        }
+    }
+    &-overlay {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background: #000;
+        z-index: 222;
+        opacity: 0;
+        visibility: hidden;
+        @include mh-transition();
+        &-open {
+            visibility: visible;
+            opacity: .2;
+        }
+    }
+}

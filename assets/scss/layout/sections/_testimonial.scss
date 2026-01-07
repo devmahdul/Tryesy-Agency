@@ -1,0 +1,96 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.12 Testimonial
+/*----------------------------------------*/
+
+.mh-testimonial {
+    &-area {
+        @media #{$lg,$md,$xs} {
+            padding-top: 0;
+        }
+    }
+    &-text {
+        & p {
+            color: var(--mh-heading-color);
+            padding-right: 120px;
+            @media #{$xs} {
+                padding-right: 0;
+            }
+        }
+    }
+    &-author {
+        &-thumb {
+            border: 2px solid var(--mh-white-color);
+            border-radius: 50%;
+        }
+        &-logo {
+            bottom: 0;
+            right: 0;
+            border-radius: 50%;
+        }
+        &-info {
+            & h3 {
+                font-size: 18px;
+            }
+            & span {
+                font-size: 14px;
+                line-height: 20px;
+                color: #525356;
+            }
+        }
+    }
+    &-thumb {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+        @media #{$lg,$md,$xs} {
+            position: relative;
+            width: 100%;
+            height: 50%;
+            margin-bottom: 60px;
+        }
+        & img {
+            background-size: cover;
+        }
+    }
+    &-playbtn {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        text-align: center;
+        background-color: var(--mh-white-color);
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        line-height: 100px;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        animation: animate-pulse 3s linear infinite;
+        &:hover {
+            background-color: var(--mh-heading-color);
+            color: var(--mh-white-color);
+        }
+    }
+}
+
+.mh-testimonial-dot {
+    & .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        border: 1px solid rgba(20, 24, 32, 0.3);
+        border-radius: 50%;
+        background-color: transparent;
+        display: inline-block;
+        opacity: 1;
+    }
+    & .swiper-pagination-bullet-active {
+        background-color: var(--mh-blue-color);
+    }
+}

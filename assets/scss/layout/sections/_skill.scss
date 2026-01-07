@@ -1,0 +1,39 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.10 Skill
+/*----------------------------------------*/
+
+.mh-skill {
+    & .mh-section-title {
+        @media #{$md} {
+            font-size: 50px;
+        }
+        & br {
+            @media #{$md} {
+                display: none;
+            }
+        }
+    }
+    &-mail {
+        & span {
+            width: 50px;
+            height: 50px;
+            background-color:  rgba(20, 24, 32, 0.06);
+            border-radius: 50%;
+            text-align: center;
+            margin-right: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &-list {
+        & label,
+        & span {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--mh-heading-color);
+        }
+    }
+} 

@@ -1,0 +1,85 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.1 Blog
+/*----------------------------------------*/
+
+.mhblog {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(20, 24, 32, 0.1);;
+    position: relative;
+    &:hover {
+        &::before {
+            width: 100%;
+            right: auto;
+            left: 0;
+        }
+        & .mhblog__thumb {
+            & img {
+                transform: scale(1.1) rotate(-2deg);
+            }
+        }
+    }
+    &__thumb {
+        overflow: hidden;
+        & img {
+            @include mh-transition();
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background-color: var(--mh-blue-color);
+        right: 0;
+        bottom: 0;
+        @include mh-transition();
+    }
+    &__meta {
+        & span {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--mh-text-color);
+            position: relative;
+            &:nth-child(1) {
+                margin-right: 10px;
+                padding-right: 10px;
+                &:before {
+                    position: absolute;
+                    content: '';
+                    width: 4px;
+                    height: 4px;
+                    background-color: #8E8F92;
+                    border-radius: 50%;
+                    right: -3px;
+                    top: 50%;
+                }
+            }
+        }
+    }
+    &__title {
+        font-size: 22px;
+        line-height: 30px;
+        padding-right: 30px;
+        @include mh-transition(.3s);
+        &:hover {
+            color: var(--mh-blue-color);
+        }
+        @media #{$lg} {
+            font-size: 22px;
+        }
+    }
+    &__author {
+        &--img {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        &--name {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            color: var(--mh-heading-color);
+        }
+    }
+}

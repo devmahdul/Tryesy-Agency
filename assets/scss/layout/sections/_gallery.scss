@@ -1,0 +1,61 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.6 Gallery
+/*----------------------------------------*/
+
+.mhgallery {
+    &__thumb {
+        & img {
+            @include mh-transition(.9s);
+        }
+    }
+    &__content {
+        background-color: var(--mh-white-color);
+        padding: 21px 30px;
+        padding-right: 62px;
+        bottom: 30px;
+        left: 30px;
+        @include mh-transition();
+        transform: perspective(400px) rotateX(-90deg);
+        display: inline-block;
+        & span {
+            color: var(--mh-heading-color);
+            font-size: 16px;
+            line-height: 24px;
+            display: block;
+        }
+    }
+    &__title {
+        font-size: 30px;
+        line-height: 1;
+        margin-bottom: 7px;
+        position: relative;
+        display: inline-block;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--mh-heading-color);
+            @include mh-transition();
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    &:hover {
+        & .mhgallery__content {
+            transform: perspective(400px) rotateX(0deg);
+        }
+        & .mhgallery__thumb {
+            & img {
+                transform: scale(1.1) rotate(-2deg);
+            }
+        }
+    }
+} 

@@ -1,0 +1,97 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.11 Team
+/*----------------------------------------*/
+
+.mh-team {
+    &-thumb {
+        & img {
+            @include mh-transition();
+        }
+    }
+    &-content {
+        background-color: rgba(255, 255, 255, 0.96);
+        padding: 12px 0;
+        padding-left: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 20px;
+        @include mh-transition();
+        transform: perspective(400px) rotateX(-90deg);
+        & span {
+            font-size: 14px;
+            color: #5c5e62;
+            display: block;
+            line-height: 1;
+        }
+    }
+    &-title {
+        font-size: 18px;
+        color: #171b24;
+        position: relative;
+        display: inline-block;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--mh-heading-color);
+            @include mh-transition();
+        }
+        &:hover {
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+    &-item {
+        height: 100%;
+        &:hover {
+            & .mh-team-content {
+                transform: perspective(400px) rotateX(0deg);
+            }
+            & .mh-team-thumb img {
+                mix-blend-mode: luminosity;
+                transform: scale(1.1);
+            }
+        }
+    }
+    &-link {
+        &-box {
+            height: 100%;
+            background-color: #eef0f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media #{$xs} {
+                height: 300px;
+            }
+        }
+        &-icon {
+            margin-bottom: 10px;
+            & span {
+                width: 44px;
+                height: 44px;
+                background-color: #277DFF;
+                display: inline-flex;
+                line-height: 44px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+        }
+        &-text {
+            & a {
+                font-weight: 400;
+                font-size: 18px;
+                letter-spacing: -0.02em;
+                color: var(--mh-heading-color);
+            }
+        }
+    }
+}

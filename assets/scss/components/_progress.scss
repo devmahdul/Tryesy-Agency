@@ -1,0 +1,29 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.6 Progress
+/*----------------------------------------*/
+
+.mh-progress-bar {
+    &-1 {
+        width: 100%;
+        height: 6px;
+        background-color: #F2EEF0;
+    }
+    &-2 {
+        width: 0;
+        height: 6px;
+        background-color: #F939A0;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: #F939A0;
+            width: 1px;
+            height: 20px;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

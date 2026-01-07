@@ -1,0 +1,255 @@
+@use '../utils' as *;
+
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Tryesy - Digital Agency HTML Template
+    Author: Mahdul Hasan
+    Support: mdmahdul10@gmail.com
+    Description: Tryesy is a modern and responsive HTML template designed for digital agencies, startups, and creative businesses. It features clean layouts, easy customization, and a professional design to showcase services, portfolios, and team effectively.
+    Version: 1.0.0
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+	-----------------
+    01. THEME CSS
+	-----------------
+		1.1 Theme Default
+		1.2 Common Classes
+		1.3 Default Spacing
+		
+	-----------------
+    02. COMPONENTS CSS
+	-----------------
+		2.1 Animation
+		2.2 Back to Top
+		2.3 Button
+		2.4 Offcanvas
+		2.5 Preloader
+		2.6 Progress
+		2.7 Section Title
+
+
+	-----------------
+    03. LAYOUT CSS
+	-----------------
+		Blog
+			3.1 Blog
+
+		Footer 
+			3.2 Footer
+
+		Sections
+			3.3 Brand
+			3.4 Cta
+			3.5 Fact
+			3.6 Gallery
+			3.7 Goal
+			3.8 Hero
+			3.9 Service
+			3.10 Skill
+			3.11 Team
+			3.12 Testimonial
+
+
+**********************************************/
+
+
+/*----------------------------------------*/
+/*  1.1 Theme Default
+/*----------------------------------------*/
+
+@import url($font-url);
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*---------------------------------
+	typography css start 
+---------------------------------*/
+body {
+	font-family: var(--mh-body-font);
+	font-size: 18px;
+	font-weight: normal;
+	color: var(--tp-body-color);
+	line-height: 28px;
+}
+
+a{
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--mh-heading-font);
+	color: var(--mh-heading-color);
+	margin: 0;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -0.02em;
+}
+
+h1 {
+	font-size: 60px;
+}
+h2 {
+font-size: 38px;
+}
+
+h3 {
+font-size: 28px;
+}
+
+h4 {
+font-size: 24px;
+}
+
+h5 {
+font-size: 18px;
+}
+
+h6 {
+font-size: 16px;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+p {
+	font-family: var(--mh-body-font);
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--mh-text-color);
+	margin-bottom: 15px;
+	line-height: 24px;
+}
+
+
+a,
+button,
+p,
+input,
+select,
+textarea,
+li,
+.transition-3{
+	@include mh-transition(.3s);
+
+}
+
+a:not([href]):not([class]), 
+a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+/*
+a:focus,
+a:hover{
+	color: inherit;
+	text-decoration: none;
+}*/
+
+
+
+a,
+button {
+	color: inherit;
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+button:focus{
+    outline: 0; 
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+input[type="text"], 
+input[type="email"],
+input[type="tel"], 
+input[type="number"], 
+input[type="password"], 
+input[type="url"], 
+textarea {
+	outline: none;
+	background-color: transparent;
+	width: 100%;
+	font-size: 14px;
+	color: var(--tp-primary-color);
+	border: 0;
+	border-bottom: 2px solid var(--mh-primary-color);
+	text-transform: capitalize;
+	font-weight: 400;
+	padding-top: 20px;
+	padding-bottom: 12px;
+
+	@include mh-placeholder{
+		color: rgba(7, 61, 48, 0.7);
+	}
+
+	&:focus{
+		border-color: var(--mh-common-black);
+		&::placeholder{
+			opacity: 0;
+		}
+	}
+
+}
+
+textarea{
+	line-height: 1.4;
+	padding-top: 17px;
+	padding-bottom: 17px;
+}
+
+*::-moz-selection {
+	background: #333;
+	color: #fff;
+	text-shadow: none;
+}
+*::selection {
+	background: #333;
+	color: #fff;
+	text-shadow: none;
+}
+
+*::-moz-placeholder {
+	color: rgba(7, 61, 48, 0.7);
+	font-size: 16px;
+	opacity: 1;
+	font-weight: 400;
+}
+*::placeholder {
+	color: rgba(7, 61, 48, 0.7);
+	font-size: 16px;
+	opacity: 1;
+	font-weight: 400;
+}
