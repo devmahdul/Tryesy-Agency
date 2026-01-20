@@ -161,7 +161,7 @@
     });
 
   // video
-  $('.test-popup-link').magnificPopup({
+  $('.video-popup').magnificPopup({
     type: 'iframe'
   });
 
